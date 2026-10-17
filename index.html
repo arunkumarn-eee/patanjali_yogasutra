@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/yoga_sanskrit.css" id="theme" />
+    <link rel="stylesheet" href="plugin/highlight/zenburn.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+	<link rel="stylesheet" href="plugin/reveal-pointer/pointer.css" />
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			let size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				while(element.scrollHeight > element.offsetHeight){
+					size--;
+					element.style.fontSize = `${size}px`;
+				}
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> पातञ्जलयोगसूत्राणि
+
+## Patanjali Yoga Sutra
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥ प्रथमोऽध्यायः ॥
+
+> ॥ समाधि-पादः ॥
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥ First Chapter ॥
+
+> ॥ Samadhi Pada ॥
+</div></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## Contents
+
+1. [What Yoga Is](#/3):  _1.1–1.4_
+2. [The Fluctuations of Mind](#/4) : _1.5–1.11_
+3. [Practice & Dispassion](#/5) : _1.12–1.16_
+4. [The Stages of Absorption](#/6) : _1.17–1.22_
+5. [The Path of Devotion](#/7) : _1.23–1.29_
+6. [Obstacles on the Path](#/8) : _1.30–1.32_
+7. [Ways to Steady the Mind](#/9) : _1.33–1.39_
+8. [Mastery & Samāpatti](#/10) : _1.40–1.46_
+9. [Beyond the Seed](#11) : _1.47–1.51_
+</div></script></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# What Yoga Is ?
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.१॥
+
+> अथ योगानुशासनम्
+
+Now starts the exploration of Yoga <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> अथ
+
+Now begins <!-- .element: class="left fragment" -->
+
+The auspicious (mangalacharane) word <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>used to overcome the obstacles in the work.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> योग
+
+Union of Jivathma & Paramathma. <!-- .element: class="left fragment" -->
+
+_**Samadhi**_ or _**Concentration**_ .
+
+<!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>in this philosophy the term &#39;Yoga&#39; has been used in the sense of Samadhi or concentration which has been elaborated in the second Sutra.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> अनु शासनम्
+
+<!-- .element: class="fragment" -->
+
+Exploration or Explanation <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.२॥
+
+> योगश्चित्तवृत्तिनिरोधः
+
+Yoga is the stilling of the fluctuations of the mind <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> योगः
+
+Yoga <!-- .element: class="left fragment" -->
+
+> चित्त
+
+The mind-stuff: mind, intellect and ego together <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> वृत्ति
+
+Modification, wave, fluctuation <!-- .element: class="left fragment" -->
+
+> निरोधः
+
+Restraint, stilling, cessation <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>The mind takes the shape of whatever it perceives, like water taking the shape of its container. Yoga is bringing these waves to rest.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.३॥
+
+> तदा द्रष्टुः स्वरूपेऽवस्थानम्
+
+Then the Seer abides in its own nature <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> तदा
+
+Then, at the time of nirodha <!-- .element: class="left fragment" -->
+
+> द्रष्टुः
+
+Of the Seer, the pure consciousness (Puruṣa) <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> स्वरूपे
+
+In its own true form <!-- .element: class="left fragment" -->
+
+> अवस्थानम्
+
+Abiding, resting, established <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>When the waves subside, the lake is clear and one sees the bottom. The Seer is not gained newly; it is revealed.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.४॥
+
+> वृत्तिसारूप्यमितरत्र
+
+At other times, the Seer appears to take the form of the mind's fluctuations <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> वृत्ति
+
+Fluctuations of mind <!-- .element: class="left fragment" -->
+
+> सारूप्यम्
+
+Identification, assuming the same form <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> इतरत्र
+
+At other times, elsewhere <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>Outside of nirodha, we mistake the changing mind for the Self. &quot;I am angry&quot;, &quot;I am happy&quot;: the Seer identifies with the vṛtti.</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# The Fluctuations of Mind
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.५॥
+
+> वृत्तयः पञ्चतय्यः क्लिष्टाक्लिष्टाः
+
+The fluctuations are five-fold, painful or non-painful <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> वृत्तयः पञ्चतय्यः
+
+Fluctuations are of five kinds <!-- .element: class="left fragment" -->
+
+> क्लिष्ट-अक्लिष्टाः
+
+Afflicted (leading to suffering) and non-afflicted (leading to freedom) <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>Klishta vrittis feed the kleshas and bind. Aklishta vrittis support discrimination and lead toward liberation.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.६॥
+
+> प्रमाणविपर्ययविकल्पनिद्रास्मृतयः
+
+Right knowledge, wrong knowledge, imagination, sleep and memory <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> प्रमाण
+
+Valid knowledge <!-- .element: class="left fragment" -->
+
+> विपर्यय
+
+Misconception <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> विकल्प
+
+Imagination, verbal delusion <!-- .element: class="left fragment" -->
+
+> निद्रा
+
+Sleep <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> स्मृति
+
+Memory <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>These five are the entire range of mental activity, the names of the five vrittis mentioned in 1.5.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.७॥
+
+> प्रत्यक्षानुमानागमाः प्रमाणानि
+
+Direct perception, inference and testimony are the means of valid knowledge <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> प्रत्यक्ष
+
+Direct perception through the senses <!-- .element: class="left fragment" -->
+
+> अनुमान
+
+Inference <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> आगमाः
+
+Reliable testimony or scripture <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.८॥
+
+> विपर्ययो मिथ्याज्ञानमतद्रूपप्रतिष्ठम्
+
+Misconception is false knowledge, not based on the real form of the object <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> विपर्ययः
+
+Error, misperception <!-- .element: class="left fragment" -->
+
+> मिथ्याज्ञानम्
+
+False knowledge <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> अतद्रूपप्रतिष्ठम्
+
+Not established in the true form of the object <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>Seeing a rope as a snake, seeing two moons, or the body as the Self. It is corrected when the true nature is seen.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.९॥
+
+> शब्दज्ञानानुपाती वस्तुशून्यो विकल्पः
+
+Imagination follows verbal knowledge and has no corresponding object <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> शब्दज्ञान-अनुपाती
+
+Follows from words and expressions <!-- .element: class="left fragment" -->
+
+> वस्तु-शून्यः
+
+Devoid of a real object <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> विकल्पः
+
+Verbal construct, imagination <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>It is neither valid knowledge nor error, but words that create an idea such as &quot;the horns of a hare&quot;.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.१०॥
+
+> अभावप्रत्ययालम्बना वृत्तिर्निद्रा
+
+Sleep is the vṛtti based on the cognition of absence <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> अभाव-प्रत्यय
+
+The cognition of absence (nothing) <!-- .element: class="left fragment" -->
+
+> आलम्बना
+
+Having as its support <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> निद्रा
+
+Sleep <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>In deep sleep the mind rests on tamas, there is no object. Yet it is a vṛtti, because on waking one recalls, &quot;I slept well&quot;.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.११॥
+
+> अनुभूतविषयासम्प्रमोषः स्मृतिः
+
+Memory is the non-slipping away of an experienced object <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> अनुभूत-विषय
+
+Previously experienced object <!-- .element: class="left fragment" -->
+
+> असम्प्रमोषः
+
+Not letting it slip away, retention <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> स्मृतिः
+
+Memory <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>Memory brings back only what was experienced. It does not add anything new.</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Practice & Dispassion
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.१२॥
+
+> अभ्यासवैराग्याभ्यां तन्निरोधः
+
+Their restraint comes through practice and dispassion <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> अभ्यास
+
+Repeated practice <!-- .element: class="left fragment" -->
+
+> वैराग्य
+
+Dispassion, non-attachment <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> तत्-निरोधः
+
+Restraint of those (vṛttis) <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>Two wings of one bird: practice steadies the mind, dispassion stops it from running outward.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.१३॥
+
+> तत्र स्थितौ यत्नोऽभ्यासः
+
+Practice is the effort to remain steady in that state <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> तत्र
+
+There, in that stilled state <!-- .element: class="left fragment" -->
+
+> स्थितौ
+
+In steadiness <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> यत्नः
+
+Effort, striving <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.१४॥
+
+> स तु दीर्घकालनैरन्तर्यसत्कारासेवितो दृढभूमिः
+
+
+It becomes firmly grounded when practiced for a long time, without break, and with devotion <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> दीर्घकाल
+
+For a long time <!-- .element: class="left fragment" -->
+
+> नैरन्तर्य
+
+Without interruption <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> सत्कार
+
+With earnestness and reverence <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> आसेवितः
+
+Practiced, attended to <!-- .element: class="left fragment" -->
+
+> दृढभूमिः
+
+Firm ground <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>Three conditions for firmness: long duration, continuity, and sincere devotion.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.१५॥
+
+> दृष्टानुश्रविकविषयवितृष्णस्य वशीकारसंज्ञा वैराग्यम्
+
+
+Vairāgya is the mastery of one free from craving for seen and heard objects <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> दृष्ट
+
+Seen, worldly objects <!-- .element: class="left fragment" -->
+
+> आनुश्रविक
+
+Heard of, promised by scriptures <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> वितृष्णस्य
+
+Of one without thirst or craving <!-- .element: class="left fragment" -->
+
+
+> वशीकार-संज्ञा
+
+The consciousness of self-mastery <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> वैराग्यम्
+
+Dispassion <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>Women, food, drink, power are seen objects; heavenly joys and the like are heard of. The yogi is free from craving for both.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.१६॥
+
+> तत्परं पुरुषख्यातेर्गुणवैतृष्ण्यम्
+
+The higher state arises from knowing the Puruṣa, and is freedom from craving even for the guṇas <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> तत् परम्
+
+That higher (dispassion) <!-- .element: class="left fragment" -->
+
+> पुरुषख्याति
+
+Knowledge of the Puruṣa <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> गुण-वैतृष्ण्यम्
+
+Absence of thirst even for the guṇas <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>This is called para-vairāgya, supreme dispassion. Not just indifference to objects but indifference to nature&#39;s very constituents.</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# The Stages of Absorption
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.१७॥
+
+> वितर्कविचारानन्दास्मितारूपानुगमात्सम्प्रज्ञातः
+
+Samprajñāta samādhi is accompanied by vitarka, vicāra, ānanda and asmitā <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> वितर्क
+
+Gross reflection, deliberation on gross objects <!-- .element: class="left fragment" -->
+
+> विचार
+
+Subtle reflection, on subtle objects <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> आनन्द
+
+Bliss <!-- .element: class="left fragment" -->
+
+> अस्मिता
+
+I-am-ness <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> सम्प्रज्ञात
+
+Samādhi with cognition, with a supporting object <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>Four successive stages, each subtler than the last.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.१८॥
+
+> विरामप्रत्ययाभ्यासपूर्वः संस्कारशेषोऽन्यः
+
+The other (asamprajñāta) is preceded by the practice of the cessation-idea and has only latent impressions remaining <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> विराम-प्रत्यय
+
+The idea of cessation <!-- .element: class="left fragment" -->
+
+> अभ्यास-पूर्वः
+
+Preceded by practice <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> संस्कार-शेषः
+
+Only latent impressions remain <!-- .element: class="left fragment" -->
+
+> अन्यः
+
+The other kind of samādhi <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.१९॥
+
+> भवप्रत्ययो विदेहप्रकृतिलयानाम्
+
+For the videhas and prakṛtilayas, it arises from birth <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> भव-प्रत्ययः
+
+Caused by (rebirth) existence <!-- .element: class="left fragment" -->
+
+> विदेह
+
+Disembodied beings <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> प्रकृति-लय
+
+Those dissolved in prakṛti <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>They experience a state of samādhi at birth, but it is not final liberation. They are again reborn when the saṃskāras mature.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.२०॥
+
+> श्रद्धावीर्यस्मृतिसमाधिप्रज्ञापूर्वक इतरेषाम्
+
+
+For others it is preceded by faith, energy, memory, samādhi and wisdom <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> श्रद्धा
+
+Faith <!-- .element: class="left fragment" -->
+
+> वीर्य
+
+Energy, vigour <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> स्मृति
+
+Mindfulness, memory <!-- .element: class="left fragment" -->
+
+
+> समाधि
+
+Absorption <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> प्रज्ञा
+
+Wisdom, discernment <!-- .element: class="left fragment" -->
+
+> इतरेषाम्
+
+For the others (yogis) <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.२१॥
+
+> तीव्रसंवेगानामासन्नः
+
+For those with intense urgency, it is near <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> तीव्र
+
+Intense, keen <!-- .element: class="left fragment" -->
+
+> संवेग
+
+Urgency, vehemence <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> आसन्नः
+
+Near <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.२२॥
+
+> मृदुमध्याधिमात्रत्वात्ततोऽपि विशेषः
+
+There is further distinction due to mild, medium and intense practice <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> मृदु
+
+Mild <!-- .element: class="left fragment" -->
+
+> मध्य
+
+Medium <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> अधिमात्र
+
+Intense <!-- .element: class="left fragment" -->
+
+
+> ततः अपि विशेषः
+
+Even among them there are differences <!-- .element: class="left fragment" -->
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# The Path of Devotion
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.२३॥
+
+> ईश्वरप्रणिधानाद्वा
+
+Or by devotion to Īśvara <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> ईश्वर
+
+The Lord, the special Puruṣa <!-- .element: class="left fragment" -->
+
+> प्रणिधान
+
+Surrender, devotion, offering <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> वा
+
+Or (an alternative path) <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.२४॥
+
+> क्लेशकर्मविपाकाशयैरपरामृष्टः पुरुषविशेष ईश्वरः
+
+Īśvara is a special Puruṣa, untouched by afflictions, actions, their results and latent impressions <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> क्लेश
+
+Afflictions <!-- .element: class="left fragment" -->
+
+> कर्म
+
+Actions <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> विपाक
+
+Results, fruition <!-- .element: class="left fragment" -->
+
+
+> आशयैः
+
+Latent deposits (of karma) <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> अपरामृष्टः
+
+Untouched <!-- .element: class="left fragment" -->
+
+> पुरुष-विशेषः
+
+A special Puruṣa <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.२५॥
+
+> तत्र निरतिशयं सर्वज्ञबीजम्
+
+In Him the seed of omniscience is unsurpassed <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> तत्र
+
+In Him <!-- .element: class="left fragment" -->
+
+> निरतिशयम्
+
+Unsurpassed, not exceeded <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> सर्वज्ञ-बीजम्
+
+Seed of omniscience <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>Knowledge varies by degree: small, great, greater. Where it reaches the limit is Īśvara.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.२६॥
+
+> पूर्वेषामपि गुरुः कालेनानवच्छेदात्
+
+He is the teacher even of the ancient ones, not limited by time <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> पूर्वेषाम् अपि
+
+Even of earlier teachers <!-- .element: class="left fragment" -->
+
+> गुरुः
+
+Teacher <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> कालेन अनवच्छेदात्
+
+Because He is not limited by time <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.२७॥
+
+> तस्य वाचकः प्रणवः
+
+His expression is Praṇava (Oṁ) <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> तस्य
+
+His, of Īśvara <!-- .element: class="left fragment" -->
+
+> वाचकः
+
+Indicator, expressive word <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> प्रणवः
+
+Oṁ <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>The relation between word and meaning is eternal, as with Īśvara and Oṁ.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.२८॥
+
+> तज्जपस्तदर्थभावनम्
+
+Repeat it, and contemplate its meaning <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> तत्-जपः
+
+Repetition of it <!-- .element: class="left fragment" -->
+
+> तत्-अर्थ-भावनम्
+
+Contemplation of its meaning <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.२९॥
+
+> ततः प्रत्यक्चेतनाधिगमोऽप्यन्तरायाभावश्च
+
+From this come realization of the inner Self and the removal of obstacles <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> ततः
+
+From that practice <!-- .element: class="left fragment" -->
+
+> प्रत्यक्-चेतना-अधिगमः
+
+Attainment of the inward-turned consciousness <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> अन्तराय-अभावः
+
+Absence of obstacles <!-- .element: class="left fragment" -->
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Obstacles on the Path
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.३०॥
+
+> व्याधिस्त्यानसंशयप्रमादालस्याविरतिभ्रान्तिदर्शनालब्धभूमिकत्वानवस्थितत्वानि चित्तविक्षेपास्तेऽन्तरायाः
+
+
+Disease, dullness, doubt, carelessness, laziness, sensuality, false view, failure to attain a stage and instability are the distractions of mind; these are the obstacles <!-- .element: style="font-size: 0.8em" class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> व्याधि
+
+Disease <!-- .element: class="left fragment" -->
+
+> स्त्यान
+
+Mental dullness <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> संशय
+
+Doubt <!-- .element: class="left fragment" -->
+
+
+> प्रमाद
+
+Carelessness <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> आलस्य
+
+Laziness, heaviness of body and mind <!-- .element: class="left fragment" -->
+
+> अविरति
+
+Sensual craving, non-restraint <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> भ्रान्तिदर्शन
+
+Wrong view, delusion <!-- .element: class="left fragment" -->
+
+> अलब्धभूमिकत्व
+
+Not reaching a stage of practice <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> अनवस्थितत्व
+
+Not remaining steady in the stage reached <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>Nine obstacles, nine distractions. They scatter the mind and are called antarāyas.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.३१॥
+
+> दुःखदौर्मनस्याङ्गमेजयत्वश्वासप्रश्वासा विक्षेपसहभुवः
+
+
+Suffering, despair, trembling of the body, and irregular inhalation and exhalation accompany the distractions <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> दुःख
+
+Pain, suffering <!-- .element: class="left fragment" -->
+
+> दौर्मनस्य
+
+Despair, dejection <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> अङ्गमेजयत्व
+
+Trembling of limbs <!-- .element: class="left fragment" -->
+
+> श्वास-प्रश्वासाः
+
+Irregular inhalation and exhalation <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> विक्षेप-सहभुवः
+
+Companions of distraction <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.३२॥
+
+> तत्प्रतिषेधार्थमेकतत्त्वाभ्यासः
+
+To prevent them, practice on one principle <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> तत्-प्रतिषेध-अर्थम्
+
+For the sake of removing these <!-- .element: class="left fragment" -->
+
+> एक-तत्त्व
+
+One principle, one object <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> अभ्यासः
+
+Practice <!-- .element: class="left fragment" -->
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Ways to Steady the Mind
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.३३॥
+
+> मैत्रीकरुणामुदितोपेक्षाणां सुखदुःखपुण्यापुण्यविषयाणां भावनातश्चित्तप्रसादनम्
+
+
+By cultivating friendliness, compassion, gladness and equanimity toward happiness, suffering, virtue and vice, the mind becomes clear <!-- .element: style="font-size: 0.8em" class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> मैत्री → सुखी
+
+Friendliness toward the happy <!-- .element: class="left fragment" -->
+
+> करुणा → दुःखी
+
+Compassion toward the suffering <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> मुदिता → पुण्य
+
+Gladness toward the virtuous <!-- .element: class="left fragment" -->
+
+> उपेक्षा → अपुण्य
+
+Equanimity toward the non-virtuous <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> भावनातः
+
+By cultivation, repeated contemplation <!-- .element: class="left fragment" -->
+
+> चित्त-प्रसादनम्
+
+Purification, serenity of the mind <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>Envy, cruelty, resentment and anger disturb the mind. These four attitudes remove them.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- Cultivate friendliness toward all beings who enjoy happiness <!-- .element: class="fragment" -->
+- Compassion toward those who suffer <!-- .element: class="fragment" -->
+- Gladness toward the virtuous <!-- .element: class="fragment" -->
+- Equanimity toward the non-virtuous <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216632.html</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- By this practice, white (pure) dharma arises <!-- .element: class="fragment" -->
+- From it the mind becomes serene <!-- .element: class="fragment" -->
+- The serene mind attains steadiness and one-pointedness <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> 1.33 : Clean up your attitude
+
+- Happy people: be friendly, not envious <!-- .element: class="fragment" -->
+- Suffering people: be kind, not harsh <!-- .element: class="fragment" -->
+- Good people: be glad, not resentful <!-- .element: class="fragment" -->
+- Wrong-doers: stay calm, not angry <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.३४॥
+
+> प्रच्छर्दनविधारणाभ्यां वा प्राणस्य
+
+Or by exhaling and retaining the breath <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> प्रच्छर्दन
+
+Exhalation, expelling <!-- .element: class="left fragment" -->
+
+> विधारण
+
+Retention <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> प्राणस्य
+
+Of the breath (prāṇa) <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- Pracchardana: expelling the air from within through the nostrils by special effort <!-- .element: class="fragment" -->
+- Vidhāraṇa: retention, which is prāṇāyāma <!-- .element: class="fragment" -->
+- By both, the yogi brings steadiness to the mind <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216633.html</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> 1.34 : Use the breath
+
+- Breath and mind move together <!-- .element: class="fragment" -->
+- Breathe out slowly and fully <!-- .element: class="fragment" -->
+- Then hold the breath gently <!-- .element: class="fragment" -->
+- A steadier breath gives a steadier mind <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.३५॥
+
+> विषयवती वा प्रवृत्तिरुत्पन्ना मनसः स्थितिनिबन्धनी
+
+
+Or higher sense-activity, once arisen, holds the mind steady <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> विषयवती प्रवृत्तिः
+
+Perception connected with an object <!-- .element: class="left fragment" -->
+
+> उत्पन्ना
+
+Having arisen <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> मनसः स्थिति-निबन्धनी
+
+Binds the mind to steadiness <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- Fixing the mind on the nose-tip gives divine smell <!-- .element: class="fragment" -->
+- Tongue-tip: taste. Palate: form. Mid-tongue: touch. Tongue-root: sound <!-- .element: class="fragment" -->
+- These arisen perceptions bind the mind to steadiness <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216634.html</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- They dispel doubt and open the door to samādhi-wisdom <!-- .element: class="fragment" -->
+- The same holds for such perceptions of moon, sun, planets, jewels, lamp-rays <!-- .element: class="fragment" -->
+- Scripture, inference and teachers give knowledge, but unseen subtle matters stay remote <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- So at least one thing must be directly perceived, to strengthen faith <!-- .element: class="fragment" -->
+- Seeing one part of the taught truth, one trusts all, even to liberation <!-- .element: class="fragment" -->
+- This is why such mind-training is taught <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- Faith, energy, memory and samādhi then arise unobstructed <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> 1.35 : Focus on one spot
+
+- Fix the mind on a point, such as the nose-tip <!-- .element: class="fragment" -->
+- A subtle new experience appears <!-- .element: class="fragment" -->
+- It removes doubt and builds faith <!-- .element: class="fragment" -->
+- Faith keeps you going on the path <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.३६॥
+
+> विशोका वा ज्योतिष्मती
+
+Or the sorrowless, luminous state <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> विशोका
+
+Free from sorrow <!-- .element: class="left fragment" -->
+
+> ज्योतिष्मती
+
+Luminous <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- "Arisen perception that holds the mind" continues from the last sūtra <!-- .element: class="fragment" -->
+- Fixing on the lotus of the heart gives awareness of the intellect <!-- .element: class="fragment" -->
+- Intellect-sattva is bright, like space <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216635.html</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- With steadiness there, perception takes the form of sun, moon,  jewels <!-- .element: class="fragment" -->
+- Settled in asmitā, the mind is like a waveless ocean: calm, endless, mere "I am" <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- Both, the object-based and the asmitā-based, are called jyotiṣmatī <!-- .element: class="fragment" -->
+- By it the yogi's mind gains steadiness <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> 1.36 : Rest on inner light
+
+- Think of the lotus of the heart, bright like space <!-- .element: class="fragment" -->
+- Or rest in the plain feeling "I am" <!-- .element: class="fragment" -->
+- The mind becomes calm, like a still ocean <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.३७॥
+
+> वीतरागविषयं वा चित्तम्
+
+Or the mind that has as its object one free from passion <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> वीतराग
+
+One free from attachment <!-- .element: class="left fragment" -->
+
+> विषयम्
+
+As the object, support <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> चित्तम्
+
+The mind <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- The yogi's mind, coloured by an object free of passion, gains steadiness <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216636.html</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> 1.37 : Think of a calm sage
+
+- The mind takes the colour of what it dwells on <!-- .element: class="fragment" -->
+- Dwell on someone free from desire <!-- .element: class="fragment" -->
+- Your mind slowly becomes settled like theirs <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.३८॥
+
+> स्वप्ननिद्राज्ञानालम्बनं वा
+
+Or by taking dream or sleep knowledge as support <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> स्वप्न
+
+Dream <!-- .element: class="left fragment" -->
+
+> निद्रा
+
+Sleep <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> ज्ञान-आलम्बनम्
+
+Knowledge as the support <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- Taking dream knowledge or sleep knowledge as support, the mind takes its form <!-- .element: class="fragment" -->
+- By this, the yogi's mind gains steadiness <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216637.html</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> 1.38 : Use a dream or sleep
+
+- Recall a clear, peaceful dream <!-- .element: class="fragment" -->
+- Or the quiet of deep sleep <!-- .element: class="fragment" -->
+- Hold that as your object of meditation <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.३९॥
+
+> यथाभिमतध्यानाद्वा
+
+Or by meditation on what one finds agreeable <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> यथा-अभिमत
+
+As one likes, as one prefers <!-- .element: class="left fragment" -->
+
+> ध्यानात्
+
+By meditation <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- Let the yogi meditate on whatever he finds agreeable <!-- .element: class="fragment" -->
+- Having gained steadiness there, the mind gains steadiness elsewhere too <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216638.html</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> 1.39 : Choose what you like
+
+- Meditate on anything you find agreeable <!-- .element: class="fragment" -->
+- Once the mind steadies there, it steadies elsewhere <!-- .element: class="fragment" -->
+- So begin with what suits you <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> Overview
+## Ways to Steady the Mind: the big picture
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+- 1.33: attitude. 1.34: breath <!-- .element: class="fragment" -->
+- 1.35 and 1.36: inner experiences to rest on <!-- .element: class="fragment" -->
+- 1.37 and 1.38: a person or a dream as support <!-- .element: class="fragment" -->
+- 1.39: your own choice <!-- .element: class="fragment" -->
+- All lead to a mind resting on one support <!-- .element: class="fragment" -->
+</div></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Mastery & Samāpatti
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.४०॥
+
+> परमाणुपरममहत्त्वान्तोऽस्य वशीकारः
+
+His mastery extends from the smallest atom to the greatest magnitude <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> परमाणु
+
+The smallest particle <!-- .element: class="left fragment" -->
+
+> परम-महत्त्व
+
+The greatest magnitude <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> वशीकारः
+
+Mastery <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- Entering the subtle, his mind gains steadiness up to the atom <!-- .element: class="fragment" -->
+- Entering the gross, it reaches up to the greatest magnitude <!-- .element: class="fragment" -->
+- Mastery covers both ends <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216639.html</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- Such a mind is complete; it needs no further training <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.४१॥
+
+> क्षीणवृत्तेरभिजातस्येव मणेर्ग्रहीतृग्रहणग्राह्येषु तत्स्थतदञ्जनता समापत्तिः
+
+
+For one whose vṛttis are weakened, like a transparent jewel, absorption in knower, knowing and known is samāpatti <!-- .element: style="font-size: 0.85em" class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> क्षीणवृत्ति
+
+Of the mind whose waves are subdued <!-- .element: class="left fragment" -->
+
+> अभिजातस्य मणेः इव
+
+Like a flawless crystal <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> ग्रहीतृ-ग्रहण-ग्राह्य
+
+Knower, instrument of knowing, and the known <!-- .element: class="left fragment" -->
+
+> तत्स्थ-तदञ्जनता
+
+Resting on it and taking its colour <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> समापत्तिः
+
+Samāpatti, perfect absorption <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>A clear crystal takes the colour of whatever is placed beside it. The calm mind becomes one with its object.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- "Kṣīṇavṛtti" means the mind whose cognitions have set <!-- .element: class="fragment" -->
+- The crystal is the example: it takes on the colour of what lies near it <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216640.html</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- So the mind rests on and takes the form of its object <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- Grasper: the puruṣa. Instruments: the senses. Grasped: the subtle and gross elements <!-- .element: class="fragment" -->
+- Absorption in the grasped is one samāpatti, in instruments another, in the grasper another <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- Samāpatti means taking the form of whatever it rests on <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.४२॥
+
+> तत्र शब्दार्थज्ञानविकल्पैः सङ्कीर्णा सवितर्का समापत्तिः
+
+
+Savitarka samāpatti is mixed with words, meanings and ideas <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> शब्द
+
+Word <!-- .element: class="left fragment" -->
+
+> अर्थ
+
+Object, meaning <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> ज्ञान
+
+Knowledge, idea <!-- .element: class="left fragment" -->
+
+
+> सङ्कीर्णा
+
+Mixed up <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> सवितर्का
+
+With reflection (savitarka) <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- "Cow" as word, "cow" as object, "cow" as idea are taken as one though they differ <!-- .element: class="fragment" -->
+- Their properties are separate: some belong to the word, others to the object, others to the idea <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216641.html</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- When the yogi's samādhi-wisdom rests on an object like a cow, still tinged by word and convention <!-- .element: class="fragment" -->
+- And mixed with the verbal idea, it is mixed samāpatti <!-- .element: class="fragment" -->
+- It is called savitarka <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.४३॥
+
+> स्मृतिपरिशुद्धौ स्वरूपशून्येवार्थमात्रनिर्भासा निर्वितर्का
+
+
+When memory is purified, the mind seems empty of itself and shows only the object: nirvitarka <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> स्मृति-परिशुद्धौ
+
+When memory is cleared <!-- .element: class="left fragment" -->
+
+> स्वरूप-शून्या इव
+
+As if empty of its own form <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> अर्थ-मात्र-निर्भासा
+
+Only the object shines <!-- .element: class="left fragment" -->
+
+> निर्वितर्का
+
+Nirvitarka, without verbal reflection <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- When memory of word and convention is dissolved <!-- .element: class="fragment" -->
+- And samādhi-wisdom is free of testimony and inference <!-- .element: class="fragment" -->
+- The object stands as its own form alone <!-- .element: class="fragment" -->
+- This is nirvitarka samāpatti <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216642.html</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- It is the seed of true perception, the highest form of it <!-- .element: class="fragment" -->
+- The object is one: a whole made of atoms in a particular arrangement <!-- .element: class="fragment" -->
+- It is not a mere concept, and not many <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- Worldly things like cow and pot are seen as one whole <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.४४॥
+
+> एतयैव सविचारा निर्विचारा च सूक्ष्मविषया व्याख्याता
+
+
+In the same way, savicāra and nirvicāra, which have subtle objects, are explained <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> एतया एव
+
+By this same description <!-- .element: class="left fragment" -->
+
+> सविचारा, निर्विचारा
+
+With and without subtle reflection <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> सूक्ष्म-विषया
+
+Having subtle objects <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- Savicāra: samāpatti on subtle elements bound by space, time and cause <!-- .element: class="fragment" -->
+- The subtle element appears with its present property, as one whole <!-- .element: class="fragment" -->
+- Nirvicāra: on subtle elements free of such limits, with all properties <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216643.html</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- In it the subtle element shines as it is, tinging the samādhi-wisdom <!-- .element: class="fragment" -->
+- The wisdom seems empty of its own form, only the object <!-- .element: class="fragment" -->
+- Gross-object ones: savitarka and nirvitarka. Subtle-object ones: savicāra and nirvicāra <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- The nirvitarka explanation covers the loss of conceptual construction <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.४५॥
+
+> सूक्ष्मविषयत्वं चालिङ्गपर्यवसानम्
+
+The range of subtle objects extends up to the unmanifest (aliṅga) <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> सूक्ष्म-विषयत्वम्
+
+The domain of subtle objects <!-- .element: class="left fragment" -->
+
+> अलिङ्ग
+
+The unmanifest, pradhāna <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> पर्यवसानम्
+
+Ending, extending up to <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- Earth's subtle form is smell-tanmātra; water's is taste; fire's is form <!-- .element: class="fragment" -->
+- Air's is touch; ether's is sound <!-- .element: class="fragment" -->
+- Subtler than these is the ego; subtler than the ego, the mere liṅga (mahat) <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216644.html</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- Subtler than liṅga is the aliṅga, the unmanifest <!-- .element: class="fragment" -->
+- Nothing is subtler than aliṅga <!-- .element: class="fragment" -->
+- Puruṣa is subtle too, but is not the material cause of the liṅga; it is only its efficient cause <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य  
+
+- So subtleness reaches its limit in pradhāna <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.४६॥
+
+> ता एव सबीजः समाधिः
+
+These alone are samādhi with seed <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> ताः एव
+
+Only these (the four samāpattis) <!-- .element: class="left fragment" -->
+
+> स-बीजः
+
+With seed <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> समाधिः
+
+Samādhi <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>Savitarka, nirvitarka, savicāra, nirvicāra: all have an external object as a seed.</p>
+</aside></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## व्यासभाष्य
+
+- Those four samāpattis have an external object as their seed <!-- .element: class="fragment" -->
+- So this samādhi is sabīja <!-- .element: class="fragment" -->
+- On a gross object: savitarka, nirvitarka. On a subtle object: savicāra, nirvicāra <!-- .element: class="fragment" -->
+- Thus samādhi is described as four-fold <!-- .element: class="fragment" -->
+</div>
+
+<aside class="notes"><p>Ref: wisdomlib.org/hinduism/book/yoga-sutras-with-commentaries/d/doc1216645.html</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+# Beyond the Seed
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.४७॥
+
+> निर्विचारवैशारद्येऽध्यात्मप्रसादः
+
+In the clarity of nirvicāra, inner luminosity arises <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> निर्विचार-वैशारद्ये
+
+In the purity (skill) of nirvicāra <!-- .element: class="left fragment" -->
+
+> अध्यात्म-प्रसादः
+
+Clarity of the inner self <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.४८॥
+
+> ऋतम्भरा तत्र प्रज्ञा
+
+There the wisdom is truth-bearing <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> ऋतम्
+
+Truth <!-- .element: class="left fragment" -->
+
+> भरा
+
+Bearing, carrying <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> तत्र प्रज्ञा
+
+Wisdom there <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.४९॥
+
+> श्रुतानुमानप्रज्ञाभ्यामन्यविषया विशेषार्थत्वात्
+
+
+It has a different object from knowledge by testimony or inference, since it knows particulars <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> श्रुत-अनुमान-प्रज्ञाभ्याम्
+
+Than the wisdom of testimony and inference <!-- .element: class="left fragment" -->
+
+> अन्य-विषया
+
+Has a different object <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> विशेष-अर्थत्वात्
+
+Because it has the particular as its object <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.५०॥
+
+> तज्जः संस्कारोऽन्यसंस्कारप्रतिबन्धी
+
+The impression born of it blocks other impressions <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> तत्-जः संस्कारः
+
+The impression born from that wisdom <!-- .element: class="left fragment" -->
+
+> अन्य-संस्कार-प्रतिबन्धी
+
+Obstructs other impressions <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+## ॥१.५१॥
+
+> तस्यापि निरोधे सर्वनिरोधान्निर्बीजः समाधिः
+
+
+When even that is restrained, everything is restrained, and this is seedless samādhi <!-- .element: class="fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> तस्य अपि निरोधे
+
+When even that (saṃskāra) is restrained <!-- .element: class="left fragment" -->
+
+> सर्व-निरोधात्
+
+Because all is restrained <!-- .element: class="left fragment" -->
+</div></script></section><section data-markdown><script type="text/template"><!-- .slide: class="left drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+> निर्बीजः समाधिः
+
+Seedless samādhi <!-- .element: class="left fragment" -->
+</div>
+
+<aside class="notes"><p>Nothing remains, not even the samādhi-saṃskāra. The Seer rests in itself (see 1.3), which completes the circle of the chapter.</p>
+</aside></script></section></section><section  data-markdown><script type="text/template"><!-- .slide: class="drop" -->
+<div class="" style="position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center" absolute="true">
+
+>॥ इति पातञ्जलयोगसूत्रे प्रथमः समाधिपादः ॥
+
+### Thus ends the first chapter, Samādhi Pāda
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/chart/chart.min.js"></script>
+	<script src="plugin/chart/plugin.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+	<script src="plugin/reveal-pointer/pointer.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+	  function isLight(color) {
+		let hex = color.replace('#', '');
+
+		// convert #fff => #ffffff
+		if(hex.length == 3){
+			hex = `${hex[0]}${hex[0]}${hex[1]}${hex[1]}${hex[2]}${hex[2]}`;
+		}
+
+		const c_r = parseInt(hex.substr(0, 2), 16);
+		const c_g = parseInt(hex.substr(2, 2), 16);
+		const c_b = parseInt(hex.substr(4, 2), 16);
+		const brightness = ((c_r * 299) + (c_g * 587) + (c_b * 114)) / 1000;
+		return brightness > 155;
+	}
+
+	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
+
+	if(isLight){
+		document.body.classList.add('has-light-background');
+	} else {
+		document.body.classList.add('has-dark-background');
+	}
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealChart,
+		  RevealCustomControls,
+	      RevealPointer,
+		  RevealChalkboard, 
+        ],
+
+
+    	allottedTime: 120 * 1000,
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+		markdown: {
+		  gfm: true,
+		  mangle: true,
+		  pedantic: false,
+		  smartLists: false,
+		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
+		},
+
+		customcontrols: {
+			controls: [
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":700,"margin":0.04,"controls":true,"progress":true,"slideNumber":false,"transition":"fade","transitionSpeed":"default"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+
+  <!-- created with Advanced Slides -->
+</html>

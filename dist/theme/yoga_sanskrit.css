@@ -1,0 +1,501 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Noto+Sans:wght@300;400;500&family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Serif+Devanagari:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap");
+
+/* ------------------------------------------------------------
+   OFFLINE USE
+   If Obsidian is offline the @import fails and Sanskrit falls back
+   to a system font. Download the fonts and add, for example:
+
+   @font-face {
+     font-family: "Tiro Devanagari Sanskrit";
+     src: url("fonts/TiroDevanagariSanskrit-Regular.ttf");
+   }
+   ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------
+   Palette
+   frond      dark palm-frond green-black, the slide background
+   leaf       dried palm-leaf tan, used for the verse strip
+   leaf-ink   the kohl-brown ink written on the leaf
+   parchment  body text on the dark background
+   marigold   headings accents, bullets, links
+   kumkum     vermilion, only for the danda marks and progress bar
+   ------------------------------------------------------------ */
+:root {
+  --frond: #160c02;
+  --frond-glow: #2a1404;
+  --frond-raised: #37281a;  
+  /* --frond: #0f1712;
+  --frond-glow: #1d3025;
+  --frond-raised: #18251c; */
+  --leaf: #d9c48d;
+  --leaf-deep: #c4a96c;
+  --leaf-ink: #2b1d0d;
+  --parchment: #e8dcb8;
+  --cream: #f6efd9;
+  --muted: #a9a07e;
+  --marigold: #f2a93b;
+  --kumkum: #d4553a;
+
+  --sanskrit-font: "Tiro Devanagari Sanskrit", "Noto Serif Devanagari",
+    "Noto Sans Devanagari", "Kohinoor Devanagari", "Nirmala UI", "Mangal", serif;
+
+  --r-background-color: var(--frond);
+  --r-main-font: "Noto Sans", "Tiro Devanagari Sanskrit", "Noto Serif Devanagari",
+    "Noto Sans Devanagari", "Kohinoor Devanagari", "Nirmala UI", sans-serif;
+  --r-main-font-size: 38px;
+  --r-main-color: var(--parchment);
+  --r-block-margin: 22px;
+  --r-heading-margin: 0 0 24px 0;
+  --r-heading-font: "Tiro Devanagari Sanskrit", "Noto Serif Devanagari",
+    "Noto Sans Devanagari", "Poppins", sans-serif;
+  --r-heading-color: var(--cream);
+  --r-heading-line-height: 1.3;
+  --r-heading-letter-spacing: 0; /* letter-spacing can split Devanagari conjuncts */
+  --r-heading-text-transform: none;
+  --r-heading-text-shadow: none;
+  --r-heading1-font-weight: 600;
+  --r-heading2-font-weight: 600;
+  --r-heading3-font-weight: 500;
+  --r-heading4-font-weight: 500;
+  --r-heading5-font-weight: 500;
+  --r-heading6-font-weight: 500;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 2.4em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.25em;
+  --r-heading4-size: 1em;
+  --r-heading5-size: 0.8em;
+  --r-heading6-size: 0.6em;
+  --r-code-font: "SFMono-Regular", Menlo, Consolas, monospace;
+  --r-link-color: var(--marigold);
+  --r-link-color-dark: #c98a22;
+  --r-link-color-hover: #ffc968;
+  --r-selection-background-color: var(--marigold);
+  --r-selection-color: var(--frond);
+}
+
+/* ------------------------------------------------------------
+   Base
+   ------------------------------------------------------------ */
+.reveal .has-light-background,
+.reveal .has-light-background h1,
+.reveal .has-light-background h2,
+.reveal .has-light-background h3,
+.reveal .has-light-background h4,
+.reveal .has-light-background h5,
+.reveal .has-light-background h6 {
+  color: #222;
+}
+
+.reveal-viewport {
+  background-color: var(--r-background-color);
+  background-image: radial-gradient(ellipse at 50% 0%, var(--frond-glow) 0%, var(--frond) 72%);
+}
+
+.reveal {
+  font-family: var(--r-main-font);
+  font-size: var(--r-main-font-size);
+  font-weight: 400;
+  color: var(--r-main-color);
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: common-ligatures contextual;
+  -webkit-font-smoothing: antialiased;
+}
+
+.reveal ::selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+.reveal ::-moz-selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.5;
+  font-weight: inherit;
+}
+
+/* One quiet watermark: a large, faint ॐ in the lower right corner */
+.reveal .slides::before {
+  content: "ॐ";
+  position: absolute;
+  right: 36px;
+  bottom: -30px;
+  font-family: var(--sanskrit-font);
+  font-size: 380px;
+  line-height: 1;
+  color: rgba(232, 220, 184, 0.045);
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------
+   Headings
+   ------------------------------------------------------------ */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: var(--r-heading-margin);
+  color: var(--r-heading-color);
+  font-family: var(--r-heading-font);
+  line-height: var(--r-heading-line-height);
+  letter-spacing: var(--r-heading-letter-spacing);
+  text-transform: var(--r-heading-text-transform);
+  text-shadow: var(--r-heading-text-shadow);
+  word-wrap: break-word;
+}
+.reveal h1 { font-size: var(--r-heading1-size); font-weight: var(--r-heading1-font-weight); text-shadow: var(--r-heading1-text-shadow); }
+.reveal h2 { font-size: var(--r-heading2-size); font-weight: var(--r-heading2-font-weight); }
+.reveal h3 { font-size: var(--r-heading3-size); font-weight: var(--r-heading3-font-weight); color: var(--marigold); }
+.reveal h4 { font-size: var(--r-heading4-size); font-weight: var(--r-heading4-font-weight); }
+.reveal h5 { font-size: var(--r-heading5-size); font-weight: var(--r-heading5-font-weight); }
+.reveal h6 { font-size: var(--r-heading6-size); font-weight: var(--r-heading6-font-weight); }
+
+.reveal h1:last-child,
+.reveal h2:last-child,
+.reveal h3:last-child,
+.reveal h4:last-child,
+.reveal h5:last-child,
+.reveal h6:last-child {
+  margin-bottom: 0;
+}
+
+/* A double danda closes every slide title, the way a verse ends */
+/*.reveal h2::after {
+  content: "॥";
+  display: block;
+  margin-top: 6px;
+  font-family: var(--sanskrit-font);
+  font-weight: 400;
+  font-size: 0.7em;
+  line-height: 1;
+  color: var(--kumkum);
+}*/
+
+.reveal .slides > section.drop {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 100%;
+}
+
+/* ------------------------------------------------------------
+   Text blocks
+   ------------------------------------------------------------ */
+.reveal p {
+  margin: var(--r-block-margin) 0;
+  line-height: 1.5;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: 600;
+  color: var(--cream);
+}
+.reveal em {
+  font-style: italic;
+  color: var(--muted); /* *transliteration* in Markdown */
+}
+.reveal blockquote em { color: inherit; }
+
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 100%;
+  max-height: 100%;
+}
+.reveal img {
+  margin: var(--r-block-margin) 0;
+  border-radius: 14px;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em;
+}
+/* Ordered lists count in Devanagari numerals: १ २ ३ ४ */
+.reveal ol { list-style-type: devanagari; }
+.reveal ol.latin { list-style-type: decimal; }
+.reveal ul { list-style-type: disc; }
+.reveal ul ul { list-style-type: square; }
+.reveal ul ul ul { list-style-type: circle; }
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px;
+}
+.reveal li { margin: 0.25em 0; }
+.reveal li::marker { color: var(--marigold); }
+.reveal ol li::marker { font-family: var(--sanskrit-font); }
+
+.reveal dt { font-weight: 600; }
+.reveal dd { margin-left: 40px; }
+
+/* ------------------------------------------------------------
+   SANSKRIT VERSE = plain Markdown blockquote. No HTML, no classes.
+
+     > योगश्चित्तवृत्तिनिरोधः
+
+     *yogaś citta-vṛtti-nirodhaḥ*
+
+     Yoga is the stilling of the fluctuations of the mind.
+
+   The blockquote becomes a strip of palm leaf with a string hole
+   and cord, written in dark ink. Sanskrit anywhere else on a slide
+   (headings, lists, paragraphs) is rendered correctly by the font
+   stack. Type Devanagari digits directly: १.२  १०८
+   ------------------------------------------------------------ */
+.reveal blockquote {
+  position: relative;
+  display: block;
+  width: fit-content;
+  max-width: 92%;
+  margin: 0.4em auto;
+  padding: 0.35em 1.3em 0.35em 2em;
+  font-family: var(--sanskrit-font);
+  font-style: normal; /* Devanagari has no true italic */
+  font-weight: 400;
+  font-size: 1.55em;
+  line-height: 1.8; /* room for matras above and below the line */
+  letter-spacing: 0;
+  text-transform: none;
+  word-break: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  font-kerning: normal;
+  color: var(--leaf-ink);
+  background: linear-gradient(180deg, var(--leaf) 0%, var(--leaf-deep) 100%);
+  border-radius: 10px 30px 30px 10px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+.reveal blockquote p {
+  margin: 0;
+  line-height: inherit;
+}
+/* the punched hole */
+.reveal blockquote::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 0.55em;
+  top: calc(50% - 0.2em);
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 50%;
+  background: var(--frond);
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.7);
+}
+/* the cord running through it */
+.reveal blockquote::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  left: -1.4em;
+  top: calc(50% - 2px);
+  width: 2.15em;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--kumkum) 45%);
+}
+.reveal q { font-style: italic; }
+
+.reveal sup { vertical-align: super; font-size: smaller; }
+.reveal sub { vertical-align: sub; font-size: smaller; }
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+  color: var(--muted);
+}
+.reveal small * { vertical-align: top; }
+
+/* ------------------------------------------------------------
+   Code
+   ------------------------------------------------------------ */
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: var(--r-block-margin) auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: var(--r-code-font);
+  line-height: 1.3em;
+  word-wrap: break-word;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+.reveal code {
+  font-family: var(--r-code-font);
+  text-transform: none;
+  tab-size: 2;
+}
+.reveal pre code {
+  display: block;
+  padding: 12px 16px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal;
+}
+.reveal .code-wrapper { white-space: normal; }
+.reveal .code-wrapper code { white-space: pre; }
+.reveal .hljs { min-height: 50%; }
+
+/* ------------------------------------------------------------
+   Tables
+   ------------------------------------------------------------ */
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.reveal table th { font-weight: 600; color: var(--marigold); }
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.3em 0.7em;
+  border-bottom: 1px solid rgba(232, 220, 184, 0.18);
+}
+.reveal table th[align="center"],
+.reveal table td[align="center"] { text-align: center; }
+.reveal table th[align="right"],
+.reveal table td[align="right"] { text-align: right; }
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td { border-bottom: none; }
+
+/* ------------------------------------------------------------
+   Links, frames, controls
+   ------------------------------------------------------------ */
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+  text-shadow: none;
+  border: none;
+}
+.reveal .roll span:after {
+  color: #fff;
+  background: var(--r-link-color-dark);
+}
+.reveal .r-frame {
+  border: 3px solid rgba(232, 220, 184, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.reveal a .r-frame { transition: all 0.15s linear; }
+.reveal a:hover .r-frame {
+  border-color: var(--r-link-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+.reveal .controls { color: var(--marigold) !important; }
+.reveal .progress {
+  background: rgba(232, 220, 184, 0.1);
+  color: var(--kumkum);
+  height: 4px;
+}
+.reveal .slide-number {
+  background: none;
+  color: var(--muted);
+}
+
+@media print {
+  .backgrounds { background-color: var(--r-background-color); }
+}
+
+.has-dark-background canvas[data-chart] { background-color: white; }
+.has-light-background canvas[data-chart] { background-color: unset; }
+canvas[data-chart] { padding: 0.5em; }
+
+/* ------------------------------------------------------------
+   Existing custom classes (kept, recolored to match)
+   ------------------------------------------------------------ */
+.logo_hover {
+  border-radius: 2rem;
+  box-shadow: 0 0 8px var(--marigold);
+}
+.logo_hover:hover {
+  box-shadow: 4px 4px 8px 0 var(--marigold), -4px -4px 8px 0 var(--marigold) !important;
+  transition: all 300ms;
+}
+
+.tri_hover {
+  border-radius: 2rem;
+  box-shadow: 0 0 8px #8fbf6a;
+}
+.tri_hover:hover {
+  transition: all 300ms;
+  box-shadow: 4px 4px 8px 0 #8fbf6a, -4px -4px 8px 0 #8fbf6a !important;
+}
+
+.sec_hover {
+  border-radius: 2rem;
+  box-shadow: 0 0 8px #45b8ae;
+}
+.sec_hover:hover {
+  transition: all 300ms;
+  box-shadow: 4px 4px 8px 0 #45b8ae, -4px -4px 8px 0 #45b8ae !important;
+}
+
+.invert_img {
+  filter: invert(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal a,
+  .reveal a .r-frame,
+  .logo_hover,
+  .tri_hover,
+  .sec_hover {
+    transition: none !important;
+  }
+}
+
+/* whole slide */
+.reveal .slides section.left,
+.reveal .slides section.left p,
+.reveal .slides section.left li,
+.reveal .slides section.left h1,
+.reveal .slides section.left h2,
+.reveal .slides section.left h3,
+.reveal .slides section.left h4,
+.reveal .slides section.left ul,
+.reveal .slides section.left ol,
+.reveal .slides section.left table {
+  text-align: left !important;
+}
+
+/* single element */
+.reveal .left,
+.reveal p.left,
+.reveal h1.left, .reveal h2.left, .reveal h3.left,
+.reveal ul.left, .reveal ol.left, .reveal blockquote.left {
+  text-align: left !important;
+  display: block;
+  width: 100%;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* headings, lists and verse strip sit at the left edge too */
+.reveal .slides section.left h2::after { margin-left: 0; }
+.reveal .slides section.left ul,
+.reveal .slides section.left ol { display: block; margin-left: 1em; }
+.reveal .slides section.left blockquote { margin-left: 0; }
+
+/* verse strip stays on the left too */
+.reveal .slides section.left blockquote {
+  margin-left: 0;
+}

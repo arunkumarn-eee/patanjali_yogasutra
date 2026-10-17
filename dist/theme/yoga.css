@@ -1,0 +1,427 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Noto+Sans:wght@300;400;500&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap");
+
+/* ------------------------------------------------------------
+   Design tokens
+   ink     deep indigo background
+   text    soft off-white
+   muted   secondary text (transliteration, captions)
+   gold    Sanskrit verses and key accents
+   lotus   links and highlights
+   ------------------------------------------------------------ */
+:root {
+  --ink: #12142a;
+  --ink-raised: #1c2040;
+  --text: #ebe8f2;
+  --muted: #a9a6c2;
+  --gold: #e6b85c;
+  --lotus: #e39ab5;
+
+  --r-background-color: var(--ink);
+  --r-main-font: "Noto Sans", "Noto Sans Devanagari", Helvetica, sans-serif;
+  --r-main-font-size: 38px;
+  --r-main-color: var(--text);
+  --r-block-margin: 22px;
+  --r-heading-margin: 0 0 24px 0;
+  --r-heading-font: "Poppins", "Noto Sans Devanagari", sans-serif;
+  --r-heading-color: #ffffff;
+  --r-heading-line-height: 1.25;
+  --r-heading-letter-spacing: -0.01em;
+  --r-heading-text-transform: none;
+  --r-heading-text-shadow: none;
+  --r-heading1-font-weight: 600;
+  --r-heading2-font-weight: 600;
+  --r-heading3-font-weight: 500;
+  --r-heading4-font-weight: 500;
+  --r-heading5-font-weight: 500;
+  --r-heading6-font-weight: 500;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 2.4em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.25em;
+  --r-heading4-size: 1em;
+  --r-heading5-size: 0.8em;
+  --r-heading6-size: 0.6em;
+  --r-code-font: "SFMono-Regular", Menlo, Consolas, monospace;
+  --r-link-color: var(--lotus);
+  --r-link-color-dark: #c97a97;
+  --r-link-color-hover: #f3c0d1;
+  --r-selection-background-color: var(--gold);
+  --r-selection-color: var(--ink);
+}
+
+/* ------------------------------------------------------------
+   Base
+   ------------------------------------------------------------ */
+.reveal .has-light-background,
+.reveal .has-light-background h1,
+.reveal .has-light-background h2,
+.reveal .has-light-background h3,
+.reveal .has-light-background h4,
+.reveal .has-light-background h5,
+.reveal .has-light-background h6 {
+  color: #222;
+}
+
+.reveal-viewport {
+  background-color: var(--r-background-color);
+  background-image: radial-gradient(
+    ellipse at 50% 0%,
+    #1f2350 0%,
+    var(--ink) 65%
+  );
+}
+
+.reveal {
+  font-family: var(--r-main-font);
+  font-size: var(--r-main-font-size);
+  font-weight: 400;
+  color: var(--r-main-color);
+}
+
+.reveal ::selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+.reveal ::-moz-selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.45;
+  font-weight: inherit;
+}
+
+/* ------------------------------------------------------------
+   Headings
+   ------------------------------------------------------------ */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: var(--r-heading-margin);
+  color: var(--r-heading-color);
+  font-family: var(--r-heading-font);
+  line-height: var(--r-heading-line-height);
+  letter-spacing: var(--r-heading-letter-spacing);
+  text-transform: var(--r-heading-text-transform);
+  text-shadow: var(--r-heading-text-shadow);
+  word-wrap: break-word;
+}
+.reveal h1 { font-size: var(--r-heading1-size); font-weight: var(--r-heading1-font-weight); text-shadow: var(--r-heading1-text-shadow); }
+.reveal h2 { font-size: var(--r-heading2-size); font-weight: var(--r-heading2-font-weight); }
+.reveal h3 { font-size: var(--r-heading3-size); font-weight: var(--r-heading3-font-weight); }
+.reveal h4 { font-size: var(--r-heading4-size); font-weight: var(--r-heading4-font-weight); }
+.reveal h5 { font-size: var(--r-heading5-size); font-weight: var(--r-heading5-font-weight); }
+.reveal h6 { font-size: var(--r-heading6-size); font-weight: var(--r-heading6-font-weight); }
+
+.reveal h1:last-child,
+.reveal h2:last-child,
+.reveal h3:last-child,
+.reveal h4:last-child,
+.reveal h5:last-child,
+.reveal h6:last-child {
+  margin-bottom: 0;
+}
+
+/* Short gold rule under slide titles */
+.reveal h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin-top: 14px;
+  border-radius: 2px;
+  background: var(--gold);
+}
+.reveal .slides section[style*="text-align: center"] h2::after,
+.reveal .slides section.center h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reveal .slides > section.drop {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 100%;
+}
+
+/* ------------------------------------------------------------
+   Text blocks
+   ------------------------------------------------------------ */
+.reveal p {
+  margin: var(--r-block-margin) 0;
+  line-height: 1.45;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: 600;
+  color: #fff;
+}
+.reveal em { font-style: italic; }
+
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 100%;
+  max-height: 100%;
+}
+.reveal img {
+  margin: var(--r-block-margin) 0;
+  border-radius: 14px;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em;
+}
+.reveal ol { list-style-type: decimal; }
+.reveal ul { list-style-type: disc; }
+.reveal ul ul { list-style-type: square; }
+.reveal ul ul ul { list-style-type: circle; }
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px;
+}
+.reveal li { margin: 0.25em 0; }
+.reveal li::marker { color: var(--gold); }
+
+.reveal dt { font-weight: 600; }
+.reveal dd { margin-left: 40px; }
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 75%;
+  margin: var(--r-block-margin) auto;
+  padding: 0.6em 1em;
+  font-style: italic;
+  color: var(--text);
+  background: var(--ink-raised);
+  border-left: 4px solid var(--gold);
+  border-radius: 0 12px 12px 0;
+}
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block;
+}
+.reveal q { font-style: italic; }
+
+.reveal sup { vertical-align: super; font-size: smaller; }
+.reveal sub { vertical-align: sub; font-size: smaller; }
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+  color: var(--muted);
+}
+.reveal small * { vertical-align: top; }
+
+/* ------------------------------------------------------------
+   Code
+   ------------------------------------------------------------ */
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: var(--r-block-margin) auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: var(--r-code-font);
+  line-height: 1.3em;
+  word-wrap: break-word;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.reveal code {
+  font-family: var(--r-code-font);
+  text-transform: none;
+  tab-size: 2;
+}
+.reveal pre code {
+  display: block;
+  padding: 12px 16px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal;
+}
+.reveal .code-wrapper { white-space: normal; }
+.reveal .code-wrapper code { white-space: pre; }
+.reveal .hljs { min-height: 50%; }
+
+/* ------------------------------------------------------------
+   Tables
+   ------------------------------------------------------------ */
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.reveal table th { font-weight: 600; color: var(--gold); }
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.3em 0.7em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+.reveal table th[align="center"],
+.reveal table td[align="center"] { text-align: center; }
+.reveal table th[align="right"],
+.reveal table td[align="right"] { text-align: right; }
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td { border-bottom: none; }
+
+/* ------------------------------------------------------------
+   Links, frames, controls
+   ------------------------------------------------------------ */
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+  text-shadow: none;
+  border: none;
+}
+.reveal .roll span:after {
+  color: #fff;
+  background: var(--r-link-color-dark);
+}
+.reveal .r-frame {
+  border: 3px solid rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+.reveal a .r-frame { transition: all 0.15s linear; }
+.reveal a:hover .r-frame {
+  border-color: var(--r-link-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+.reveal .controls { color: var(--gold) !important; }
+.reveal .progress {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--gold);
+  height: 4px;
+}
+
+@media print {
+  .backgrounds { background-color: var(--r-background-color); }
+}
+
+.has-dark-background canvas[data-chart] { background-color: white; }
+.has-light-background canvas[data-chart] { background-color: unset; }
+canvas[data-chart] { padding: 0.5em; }
+
+/* ------------------------------------------------------------
+   Yoga Sutra components
+   Usage in Markdown:
+     <p class="sutra-no">Yoga Sutra 1.2</p>
+     <p class="sanskrit">योगश्चित्तवृत्तिनिरोधः</p>
+     <p class="translit">yogaś citta-vṛtti-nirodhaḥ</p>
+     <p class="meaning">Yoga is the stilling of the fluctuations of the mind.</p>
+   ------------------------------------------------------------ */
+.reveal .sanskrit {
+  font-family: "Noto Sans Devanagari", "Poppins", sans-serif;
+  font-size: 1.6em;
+  font-weight: 500;
+  line-height: 1.7; /* Devanagari needs extra room for matras */
+  color: var(--gold);
+  font-style: normal; /* Devanagari has no true italic */
+  margin: 0.3em 0;
+}
+
+.reveal .translit {
+  font-family: "Noto Sans", sans-serif;
+  font-style: italic;
+  font-size: 0.85em;
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  margin: 0.2em 0 0.8em;
+}
+
+.reveal .meaning {
+  font-size: 1em;
+  max-width: 24em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reveal .sutra-no {
+  display: inline-block;
+  margin: 0 0 0.6em;
+  padding: 0.1em 0.8em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 0.6em;
+  color: var(--ink);
+  background: var(--gold);
+  border-radius: 999px;
+}
+
+/* A raised panel for commentary or notes */
+.reveal .panel {
+  padding: 0.8em 1.2em;
+  text-align: left;
+  background: var(--ink-raised);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+}
+
+/* ------------------------------------------------------------
+   Existing custom classes (kept, recolored to match)
+   ------------------------------------------------------------ */
+.logo_hover {
+  border-radius: 2rem;
+  box-shadow: 0 0 8px var(--gold);
+}
+.logo_hover:hover {
+  box-shadow: 4px 4px 8px 0 var(--gold), -4px -4px 8px 0 var(--gold) !important;
+  transition: all 300ms;
+}
+
+.tri_hover {
+  border-radius: 2rem;
+  box-shadow: 0 0 8px #7fd1ae;
+}
+.tri_hover:hover {
+  transition: all 300ms;
+  box-shadow: 4px 4px 8px 0 #7fd1ae, -4px -4px 8px 0 #7fd1ae !important;
+}
+
+.sec_hover {
+  border-radius: 2rem;
+  box-shadow: 0 0 8px #7fb7f0;
+}
+.sec_hover:hover {
+  transition: all 300ms;
+  box-shadow: 4px 4px 8px 0 #7fb7f0, -4px -4px 8px 0 #7fb7f0 !important;
+}
+
+.invert_img {
+  filter: invert(1);
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  .reveal a,
+  .reveal a .r-frame,
+  .logo_hover,
+  .tri_hover,
+  .sec_hover {
+    transition: none !important;
+  }
+}

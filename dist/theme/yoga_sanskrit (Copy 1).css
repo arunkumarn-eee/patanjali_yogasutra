@@ -1,0 +1,481 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Noto+Sans:wght@300;400;500&family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Serif+Devanagari:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap");
+
+/* ------------------------------------------------------------
+   OFFLINE USE
+   If Obsidian is offline, the @import above fails and Sanskrit
+   falls back to a system font with broken conjuncts. Download the
+   fonts, put them next to this file and add, for example:
+
+   @font-face {
+     font-family: "Tiro Devanagari Sanskrit";
+     src: url("fonts/TiroDevanagariSanskrit-Regular.ttf");
+   }
+   ------------------------------------------------------------ */
+
+/* ------------------------------------------------------------
+   Palette: dark palm-leaf manuscript (tāḍapatra)
+   kajal     kohl-black leaf, the slide background
+   bark      raised panels
+   leaf      palm-leaf tan used as "ink" on the dark leaf
+   kesar     saffron, reserved for Sanskrit verses
+   kumkum    vermilion: margin rule, cord, verse markers
+   mor       peacock teal for links
+   ------------------------------------------------------------ */
+:root {
+  --kajal: #16130e;
+  --kajal-glow: #2a2214;
+  --bark: #251f15;
+  --leaf: #ecdcb8;
+  --leaf-bright: #f7edd2;
+  --leaf-muted: #b5a37b;
+  --kesar: #eba73f;
+  --kumkum: #c7452f;
+  --mor: #45b8ae;
+
+  --sanskrit-font: "Tiro Devanagari Sanskrit", "Noto Serif Devanagari",
+    "Noto Sans Devanagari", "Kohinoor Devanagari", "Nirmala UI", "Mangal", serif;
+
+  --r-background-color: var(--kajal);
+  /* Devanagari glyphs fall through to the Sanskrit fonts automatically */
+  --r-main-font: "Noto Sans", "Tiro Devanagari Sanskrit", "Noto Serif Devanagari",
+    "Noto Sans Devanagari", "Kohinoor Devanagari", "Nirmala UI", sans-serif;
+  --r-main-font-size: 38px;
+  --r-main-color: var(--leaf);
+  --r-block-margin: 22px;
+  --r-heading-margin: 0 0 24px 0;
+  --r-heading-font: "Poppins", "Tiro Devanagari Sanskrit", "Noto Serif Devanagari",
+    "Noto Sans Devanagari", sans-serif;
+  --r-heading-color: var(--leaf-bright);
+  --r-heading-line-height: 1.3;
+  --r-heading-letter-spacing: 0; /* any letter-spacing can break Devanagari conjuncts */
+  --r-heading-text-transform: none;
+  --r-heading-text-shadow: none;
+  --r-heading1-font-weight: 600;
+  --r-heading2-font-weight: 600;
+  --r-heading3-font-weight: 500;
+  --r-heading4-font-weight: 500;
+  --r-heading5-font-weight: 500;
+  --r-heading6-font-weight: 500;
+  --r-heading1-text-shadow: none;
+  --r-heading1-size: 2.4em;
+  --r-heading2-size: 1.6em;
+  --r-heading3-size: 1.25em;
+  --r-heading4-size: 1em;
+  --r-heading5-size: 0.8em;
+  --r-heading6-size: 0.6em;
+  --r-code-font: "SFMono-Regular", Menlo, Consolas, monospace;
+  --r-link-color: var(--mor);
+  --r-link-color-dark: #2f8f87;
+  --r-link-color-hover: #7fd8cf;
+  --r-selection-background-color: var(--kesar);
+  --r-selection-color: var(--kajal);
+}
+
+/* ------------------------------------------------------------
+   Base
+   ------------------------------------------------------------ */
+.reveal .has-light-background,
+.reveal .has-light-background h1,
+.reveal .has-light-background h2,
+.reveal .has-light-background h3,
+.reveal .has-light-background h4,
+.reveal .has-light-background h5,
+.reveal .has-light-background h6 {
+  color: #222;
+}
+
+/* Palm-leaf fibres run horizontally, so a faint line texture sits over a warm glow */
+.reveal-viewport {
+  background-color: var(--r-background-color);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(236, 220, 184, 0.03) 0 1px, transparent 1px 7px),
+    radial-gradient(ellipse at 50% 0%, var(--kajal-glow) 0%, var(--kajal) 70%);
+}
+
+.reveal {
+  font-family: var(--r-main-font);
+  font-size: var(--r-main-font-size);
+  font-weight: 400;
+  color: var(--r-main-color);
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: common-ligatures contextual;
+  -webkit-font-smoothing: antialiased;
+}
+
+.reveal ::selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+.reveal ::-moz-selection {
+  color: var(--r-selection-color);
+  background: var(--r-selection-background-color);
+  text-shadow: none;
+}
+
+.reveal .slides section,
+.reveal .slides section > section {
+  line-height: 1.5;
+  font-weight: inherit;
+}
+
+/* The slide itself is a leaf: rounded edge, margin line, punched string hole and cord */
+.reveal .slides::before {
+  content: "";
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(235, 167, 63, 0.4);
+  border-radius: 22px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 36px 50%, #0d0b08 0 9px, rgba(235, 167, 63, 0.75) 9.5px 11px, transparent 11.5px),
+    linear-gradient(var(--kumkum), var(--kumkum)) no-repeat 0 50% / 36px 2px;
+}
+
+/* ------------------------------------------------------------
+   Headings
+   ------------------------------------------------------------ */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: var(--r-heading-margin);
+  color: var(--r-heading-color);
+  font-family: var(--r-heading-font);
+  line-height: var(--r-heading-line-height);
+  letter-spacing: var(--r-heading-letter-spacing);
+  text-transform: var(--r-heading-text-transform);
+  text-shadow: var(--r-heading-text-shadow);
+  word-wrap: break-word;
+}
+.reveal h1 { font-size: var(--r-heading1-size); font-weight: var(--r-heading1-font-weight); text-shadow: var(--r-heading1-text-shadow); }
+.reveal h2 { font-size: var(--r-heading2-size); font-weight: var(--r-heading2-font-weight); }
+.reveal h3 { font-size: var(--r-heading3-size); font-weight: var(--r-heading3-font-weight); }
+.reveal h4 { font-size: var(--r-heading4-size); font-weight: var(--r-heading4-font-weight); }
+.reveal h5 { font-size: var(--r-heading5-size); font-weight: var(--r-heading5-font-weight); }
+.reveal h6 { font-size: var(--r-heading6-size); font-weight: var(--r-heading6-font-weight); }
+
+.reveal h1:last-child,
+.reveal h2:last-child,
+.reveal h3:last-child,
+.reveal h4:last-child,
+.reveal h5:last-child,
+.reveal h6:last-child {
+  margin-bottom: 0;
+}
+
+/* A double danda closes every slide title, the way a verse is closed */
+.reveal h2::after {
+  content: "॥";
+  display: block;
+  margin-top: 6px;
+  font-family: var(--sanskrit-font);
+  font-weight: 400;
+  font-size: 0.7em;
+  line-height: 1;
+  color: var(--kumkum);
+}
+
+.reveal .slides > section.drop {
+  padding-top: 0;
+  padding-bottom: 0;
+  height: 100%;
+}
+
+/* ------------------------------------------------------------
+   Text blocks
+   ------------------------------------------------------------ */
+.reveal p {
+  margin: var(--r-block-margin) 0;
+  line-height: 1.5;
+}
+
+.reveal strong,
+.reveal b {
+  font-weight: 600;
+  color: var(--leaf-bright);
+}
+.reveal em { font-style: italic; }
+
+.reveal img,
+.reveal video,
+.reveal iframe {
+  max-width: 100%;
+  max-height: 100%;
+}
+.reveal img {
+  margin: var(--r-block-margin) 0;
+  border-radius: 14px;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  display: inline-block;
+  text-align: left;
+  margin: 0 0 0 1em;
+}
+/* Ordered lists count in Devanagari numerals: १ २ ३ ४ */
+.reveal ol { list-style-type: devanagari; }
+.reveal ol.latin { list-style-type: decimal; }
+.reveal ul { list-style-type: disc; }
+.reveal ul ul { list-style-type: square; }
+.reveal ul ul ul { list-style-type: circle; }
+.reveal ul ul,
+.reveal ul ol,
+.reveal ol ol,
+.reveal ol ul {
+  display: block;
+  margin-left: 40px;
+}
+.reveal li { margin: 0.25em 0; }
+.reveal ul li::marker { color: var(--kesar); }
+.reveal ol li::marker {
+  color: var(--kesar);
+  font-family: var(--sanskrit-font);
+}
+
+.reveal dt { font-weight: 600; }
+.reveal dd { margin-left: 40px; }
+
+.reveal blockquote {
+  display: block;
+  position: relative;
+  width: 75%;
+  margin: var(--r-block-margin) auto;
+  padding: 0.6em 1em;
+  font-style: italic;
+  background: var(--bark);
+  border-left: 4px solid var(--kumkum);
+  border-radius: 0 12px 12px 0;
+}
+.reveal blockquote p:first-child,
+.reveal blockquote p:last-child {
+  display: inline-block;
+}
+.reveal q { font-style: italic; }
+
+.reveal sup { vertical-align: super; font-size: smaller; }
+.reveal sub { vertical-align: sub; font-size: smaller; }
+.reveal small {
+  display: inline-block;
+  font-size: 0.6em;
+  line-height: 1.2em;
+  vertical-align: top;
+  color: var(--leaf-muted);
+}
+.reveal small * { vertical-align: top; }
+
+/* ------------------------------------------------------------
+   Code
+   ------------------------------------------------------------ */
+.reveal pre {
+  display: block;
+  position: relative;
+  width: 90%;
+  margin: var(--r-block-margin) auto;
+  text-align: left;
+  font-size: 0.55em;
+  font-family: var(--r-code-font);
+  line-height: 1.3em;
+  word-wrap: break-word;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+.reveal code {
+  font-family: var(--r-code-font);
+  text-transform: none;
+  tab-size: 2;
+}
+.reveal pre code {
+  display: block;
+  padding: 12px 16px;
+  overflow: auto;
+  max-height: 400px;
+  word-wrap: normal;
+}
+.reveal .code-wrapper { white-space: normal; }
+.reveal .code-wrapper code { white-space: pre; }
+.reveal .hljs { min-height: 50%; }
+
+/* ------------------------------------------------------------
+   Tables
+   ------------------------------------------------------------ */
+.reveal table {
+  margin: auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.reveal table th { font-weight: 600; color: var(--kesar); }
+.reveal table th,
+.reveal table td {
+  text-align: left;
+  padding: 0.3em 0.7em;
+  border-bottom: 1px solid rgba(236, 220, 184, 0.18);
+}
+.reveal table th[align="center"],
+.reveal table td[align="center"] { text-align: center; }
+.reveal table th[align="right"],
+.reveal table td[align="right"] { text-align: right; }
+.reveal table tbody tr:last-child th,
+.reveal table tbody tr:last-child td { border-bottom: none; }
+
+/* ------------------------------------------------------------
+   Links, frames, controls
+   ------------------------------------------------------------ */
+.reveal a {
+  color: var(--r-link-color);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.reveal a:hover {
+  color: var(--r-link-color-hover);
+  text-shadow: none;
+  border: none;
+}
+.reveal .roll span:after {
+  color: #fff;
+  background: var(--r-link-color-dark);
+}
+.reveal .r-frame {
+  border: 3px solid rgba(236, 220, 184, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+.reveal a .r-frame { transition: all 0.15s linear; }
+.reveal a:hover .r-frame {
+  border-color: var(--r-link-color);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.55);
+}
+.reveal .controls { color: var(--kesar) !important; }
+.reveal .progress {
+  background: rgba(236, 220, 184, 0.1);
+  color: var(--kumkum);
+  height: 4px;
+}
+.reveal .slide-number {
+  background: none;
+  color: var(--leaf-muted);
+  font-family: var(--sanskrit-font);
+}
+
+@media print {
+  .backgrounds { background-color: var(--r-background-color); }
+}
+
+.has-dark-background canvas[data-chart] { background-color: white; }
+.has-light-background canvas[data-chart] { background-color: unset; }
+canvas[data-chart] { padding: 0.5em; }
+
+/* ------------------------------------------------------------
+   Sanskrit components
+   Markdown usage:
+     <p class="sutra-no">योगसूत्र १.२</p>
+     <p class="sanskrit">पञ्चतय्यः क्लिष्टाऽक्लिष्टाः</p>
+     <p class="translit">pañcatayyaḥ kliṣṭākliṣṭāḥ</p>
+     <p class="meaning">English meaning here.</p>
+   Inline Sanskrit inside a sentence: <span class="sa">योगः</span>
+   ------------------------------------------------------------ */
+.reveal .sanskrit,
+.reveal .sa,
+.reveal :lang(sa),
+.reveal :lang(hi) {
+  font-family: var(--sanskrit-font);
+  font-style: normal; /* Devanagari has no true italic */
+  font-weight: 400;
+  letter-spacing: 0 !important; /* keeps conjuncts (ञ्च, ष्ट, क्ल) joined */
+  text-transform: none;
+  word-break: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  font-kerning: normal;
+}
+
+.reveal .sanskrit {
+  font-size: 1.7em;
+  line-height: 1.85; /* room for matras above and below the line */
+  color: var(--kesar);
+  text-shadow: 0 0 28px rgba(235, 167, 63, 0.22);
+  margin: 0.3em 0;
+}
+
+.reveal .translit {
+  font-family: "Noto Sans", sans-serif;
+  font-style: italic;
+  font-size: 0.85em;
+  color: var(--leaf-muted);
+  margin: 0.2em 0 0.8em;
+}
+
+.reveal .meaning {
+  max-width: 24em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Sutra number sits between two dandas: ॥ १.२ ॥ */
+.reveal .sutra-no {
+  display: inline-block;
+  margin: 0 0 0.6em;
+  padding: 0.1em 0.9em;
+  font-family: var(--sanskrit-font);
+  font-size: 0.75em;
+  color: var(--kesar);
+  border: 1px solid rgba(235, 167, 63, 0.55);
+  border-radius: 999px;
+}
+.reveal .sutra-no::before { content: "॥ "; color: var(--kumkum); }
+.reveal .sutra-no::after  { content: " ॥"; color: var(--kumkum); }
+
+.reveal .panel {
+  padding: 0.8em 1.2em;
+  text-align: left;
+  background: var(--bark);
+  border: 1px solid rgba(236, 220, 184, 0.1);
+  border-radius: 16px;
+}
+
+/* ------------------------------------------------------------
+   Existing custom classes (kept, recolored to match)
+   ------------------------------------------------------------ */
+.logo_hover {
+  border-radius: 2rem;
+  box-shadow: 0 0 8px var(--kesar);
+}
+.logo_hover:hover {
+  box-shadow: 4px 4px 8px 0 var(--kesar), -4px -4px 8px 0 var(--kesar) !important;
+  transition: all 300ms;
+}
+
+.tri_hover {
+  border-radius: 2rem;
+  box-shadow: 0 0 8px #8fbf6a;
+}
+.tri_hover:hover {
+  transition: all 300ms;
+  box-shadow: 4px 4px 8px 0 #8fbf6a, -4px -4px 8px 0 #8fbf6a !important;
+}
+
+.sec_hover {
+  border-radius: 2rem;
+  box-shadow: 0 0 8px var(--mor);
+}
+.sec_hover:hover {
+  transition: all 300ms;
+  box-shadow: 4px 4px 8px 0 var(--mor), -4px -4px 8px 0 var(--mor) !important;
+}
+
+.invert_img {
+  filter: invert(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal a,
+  .reveal a .r-frame,
+  .logo_hover,
+  .tri_hover,
+  .sec_hover {
+    transition: none !important;
+  }
+}
